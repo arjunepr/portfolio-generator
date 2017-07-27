@@ -27,7 +27,7 @@ const commonConfig = {
     chunkFilename: '[name].bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx', '.html', '.styl'],
+    extensions: ['.js', '.json', '.jsx', '.html', '.styl', '.stylC'],
   },
   node: {
     fs: 'empty',
@@ -94,6 +94,47 @@ const commonConfig = {
       },
 
       {
+        test: /\.stylC$/,
+        use: ExtractTextPlugin.extract({
+          fallback: { loader: 'style-loader' },
+
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              }
+            },
+            'stylus-loader'
+          ]
+        })
+      },
+
+      {
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          fallback: { loader: 'style-loader' },
+
+          use: [
+            'css-loader',
+            'stylus-loader'
+          ]
+        })
+      },
+
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: { loader: 'style-loader' },
+
+          use: [
+            'css-loader'
+          ]
+        })
+      },
+
+      {
         test: /\.(ttf|eot|woff|woff2|otf)$/,
         loader: 'file-loader',
         options: {
@@ -118,19 +159,6 @@ const commonConfig = {
 
 const devConfig = {
   devtool: 'eval-source-map',
-  module: {
-    rules: [
-      {
-        test: /\.styl$/,
-        use: ['style-loader', 'css-loader', 'stylus-loader'],
-      },
-
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-    ]
-  },
 
   devServer: {
     contentBase: join(__dirname, "dist"),
@@ -157,23 +185,6 @@ const prodConfig = {
   devtool: 'source-map',
   module: {
     rules: [
-      {
-        test: /\.styl$/,
-        use: ExtractTextPlugin.extract({
-          fallback: { loader: 'style-loader' },
-
-          use: ['css-loader', 'stylus-loader']
-        })
-      },
-
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: { loader: 'style-loader' },
-
-          use: ['css-loader']
-        })
-      },
 
       {
         test: /\.((html)|(js))$/,
