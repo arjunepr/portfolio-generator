@@ -29,8 +29,8 @@ const commonConfig = {
   resolve: {
     extensions: ['.js', '.json', '.vue', '.html', '.styl'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      // inherits$: join(__dirname, 'node_modules/inherits')
+      "react": "preact-compat",
+      "react-dom": "preact-compat"
     }
   },
   node: {
@@ -41,23 +41,13 @@ const commonConfig = {
     rules: [
 
       {
-        test: /\.js$/,
+        test: /\.((js)|(jsx))$/,
         exclude: [
           join(__dirname, 'node_modules'),
         ],
         use: ['babel-loader']
       },
 
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          extractStyles,
-          loaders: {
-            css: ['style-loader', 'css-loader', 'stylus-loader']
-          }
-        }
-      },
 
       {
         test: /\.html$/,
