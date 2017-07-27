@@ -1,7 +1,7 @@
 {
-  "name": "webpack-wannabe-boilerplate",
+  "name": "portfolio-generator",
   "version": "0.1.0",
-  "description": "A working quick to run webpack boilerplate with Stylus and Typescript, with React support. Also includes webpack-dev-server and handles html files decently.",
+  "description": "A portfolio generator that makes use of Preact and Mobx on the front end. Saves progress in neDB and finally exports portfolio as PDF.",
   "main": "index.js",
   "author": "Arjun Raju Pillai <revarjunr@gmail.com>",
   "scripts": {
@@ -33,7 +33,6 @@
     "webpack-strip-block": "^0.2.0"
   },
   "license": "MIT",
-  "dependencies": {
-
-  }
+  "dependencies": {},
+  "repository": "git@github.com:arjunepr/portfolio-generator.git"
 }
