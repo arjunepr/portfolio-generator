@@ -1,7 +1,7 @@
 {
   "name": "portfolio-generator",
   "version": "0.1.0",
-  "description": "A portfolio generator that makes use of Preact and Mobx on the front end. Saves progress in neDB and finally exports portfolio as PDF.",
+  "description": "A portfolio generator that makes use of Inferno and Mobx on the front end. Saves progress in neDB and finally exports portfolio as PDF.",
   "main": "index.js",
   "author": "Arjun Raju Pillai <revarjunr@gmail.com>",
   "scripts": {
