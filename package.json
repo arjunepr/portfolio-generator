@@ -34,11 +34,11 @@
   "license": "MIT",
   "dependencies": {
     "autobind-decorator": "^2.1.0",
-    "mobx": "^3.2.1",
-    "mobx-react": "^4.2.2",
-    "preact": "^8.2.1",
-    "preact-compat": "^3.16.0",
-    "react-router": "^4.1.2"
+    "inferno": "^3.7.0",
+    "inferno-component": "^3.7.0",
+    "inferno-mobx": "^3.7.0",
+    "inferno-router": "^3.7.0",
+    "mobx": "^3.2.1"
   },
   "repository": "git@github.com:arjunepr/portfolio-generator.git"
 }

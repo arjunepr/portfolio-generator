@@ -27,11 +27,7 @@ const commonConfig = {
     chunkFilename: '[name].bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.json', '.vue', '.html', '.styl'],
-    alias: {
-      "react": "preact-compat",
-      "react-dom": "preact-compat"
-    }
+    extensions: ['.js', '.json', '.jsx', '.html', '.styl'],
   },
   node: {
     fs: 'empty',
