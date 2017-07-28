@@ -17,7 +17,7 @@ const Welcome = asyncComponent(() => import('../Welcome/Welcome.jsx').then(mod =
 const BasicExample = () => (
   <Router>
     <div className={styles.router}>
-      <h4>Generate your own portfolio!</h4>
+      <h4 className={styles.header}>Generate your own portfolio!</h4>
 
       <div className="route-content">
         <Switch>
